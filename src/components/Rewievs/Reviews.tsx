@@ -1,6 +1,7 @@
 import React from 'react';
 import { Review as ReviewType } from '../../type';
 import s from './Rewievs.module.css';
+import { UserReview } from '../UserReview';
 
 type RewievsProps = { reviews: ReviewType[] };
 
@@ -12,9 +13,7 @@ export const Reviews: React.FC<RewievsProps> = ({ reviews }) => {
         <ul className={s.reviews}>
           {reviews.map((review) => (
             <li key={review.id} className={s.review}>
-              <h3>{review.user}</h3>
-              <p>Оценка: {review.rating}</p>
-              <p>Комментарий: {review.text}</p>
+              <UserReview review={review} />
             </li>
           ))}
         </ul>

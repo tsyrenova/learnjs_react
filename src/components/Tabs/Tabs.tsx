@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './Tabs.module.css';
+import cx from 'classnames';
 
 type Tab = {
   id: string;
@@ -21,7 +22,7 @@ export const Tabs: React.FC<TabsProps> = ({ tabs, activeTab, setActiveTab }) => 
         {tabs.map((tab) => (
           <div
             key={tab.id}
-            className={`${s.tab} ${activeTab === tab.id ? s.activeTab : ''}`}
+            className={cx(s.tab, { [s.activeTab]: activeTab === tab.id })}
             onClick={() => setActiveTab(tab.id)}
           >
             {tab.name}

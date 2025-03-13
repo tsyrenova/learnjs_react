@@ -8,3 +8,9 @@
   gap: 20px;
   margin-bottom: 24px;
 }
+
+.dish {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}

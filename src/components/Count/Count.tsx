@@ -1,16 +1,17 @@
 import { useState } from 'react';
+import { MAX_DISHES, MIN_DISHES } from '../constants';
 
 export const Count = () => {
   const [count, setCount] = useState<number>(0);
 
   const increment = () => {
-    if (count < 5) {
+    if (count < MAX_DISHES) {
       setCount((prevCount) => prevCount + 1);
     }
   };
 
   const decrement = () => {
-    if (count > 0) {
+    if (count > MIN_DISHES) {
       setCount((prevCount) => prevCount - 1);
     }
   };

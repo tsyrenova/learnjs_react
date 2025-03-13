@@ -1,18 +1,20 @@
-import { Fragment } from 'react/jsx-runtime';
+import React from 'react';
 import { Menu as MenuType } from '../../type';
 import { Dish } from '../Dish';
 import s from './Menu.module.css';
 
-export const Menu = ({ menu }: { menu: MenuType[] }) => {
+type MenuProps = { menu: MenuType[] };
+
+export const Menu: React.FC<MenuProps> = ({ menu }) => {
   return (
     <div>
       <h3 className={s.title}>Меню</h3>
       {menu.length ? (
         <ul className={s.menu}>
           {menu.map((item) => (
-            <Fragment key={item.id}>
+            <li key={item.id} className={s.dish}>
               <Dish dish={item} />
-            </Fragment>
+            </li>
           ))}
         </ul>
       ) : (
