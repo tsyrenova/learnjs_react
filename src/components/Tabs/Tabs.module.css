@@ -1,0 +1,19 @@
+.tabs {
+  display: flex;
+  gap: 10px;
+  padding: 24px 0;
+}
+
+.tab {
+  height: 20px;
+  padding: 8px;
+  border: 1px solid gray;
+}
+
+.activeTab {
+  background-color: rgba(174, 170, 170, 0.144);
+}
+
+.visibleHidden {
+  display: none;
+}

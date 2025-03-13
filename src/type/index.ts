@@ -1,4 +1,4 @@
-export type Restaurant = {
+export type RestaurantType = {
   id: string;
   name: string;
   menu: Menu[];
@@ -17,4 +17,11 @@ export type Review = {
   user: string;
   text: string;
   rating: number;
+};
+
+export type DishType = {
+  id: string;
+  name: string;
+  price: number;
+  ingredients: string[];
 };

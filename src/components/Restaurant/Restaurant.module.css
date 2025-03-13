@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.restaurant {
+  width: 50%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(78, 41, 41);
+  background-color: rgba(174, 170, 170, 0.144);
+  margin-bottom: 24px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
