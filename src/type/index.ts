@@ -18,3 +18,10 @@ export type Review = {
   text: string;
   rating: number;
 };
+
+export type DishType = {
+  id: string;
+  name: string;
+  price: number;
+  ingredients: string[];
+};

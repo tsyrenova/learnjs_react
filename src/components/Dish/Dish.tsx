@@ -1,13 +1,9 @@
 import React from 'react';
 import { Count } from '../Count';
+import { DishType } from '../../type';
 
 type Props = {
-  dish: {
-    id: string;
-    name: string;
-    price: number;
-    ingredients: string[];
-  };
+  dish: DishType;
 };
 
 export const Dish: React.FC<Props> = ({ dish }) => {
