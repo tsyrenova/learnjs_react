@@ -1,7 +1,7 @@
-import React, { PropsWithChildren } from 'react';
+import { PropsWithChildren, FC } from 'react';
 import s from './Layout.module.css';
 
-export const Layout: React.FC<PropsWithChildren> = ({ children }) => {
+export const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className={s.container}>
       <header className={s.header}>Header</header>

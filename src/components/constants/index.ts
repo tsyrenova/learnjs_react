@@ -1,2 +1,2 @@
-export const MAX_DISHES = 5;
-export const MIN_DISHES = 0;
+export const MAX_COUNT = 5;
+export const MIN_COUNT = 0;
