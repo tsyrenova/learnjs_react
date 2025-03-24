@@ -1,7 +1,7 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { Count } from '../Count';
 import { DishType } from '../../type';
-import { MAX_COUNT, MIN_COUNT } from '../constants';
+import { useCounter } from '../hooks/useCounter';
 
 type Props = {
   dish: DishType;
@@ -9,19 +9,8 @@ type Props = {
 
 export const Dish: FC<Props> = ({ dish }) => {
   const { name, price, ingredients } = dish;
-  const [count, setCount] = useState<number>(0);
 
-  const increment = () => {
-    if (count < MAX_COUNT) {
-      setCount((prevCount) => prevCount + 1);
-    }
-  };
-
-  const decrement = () => {
-    if (count > MIN_COUNT) {
-      setCount((prevCount) => prevCount - 1);
-    }
-  };
+  const { count, increment, decrement } = useCounter(0);
 
   return (
     <>
