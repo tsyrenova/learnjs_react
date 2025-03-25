@@ -1,28 +1,22 @@
-import { useState } from 'react';
-import { MAX_DISHES, MIN_DISHES } from '../constants';
+import { FC } from 'react';
+import s from './Count.module.css';
 
-export const Count = () => {
-  const [count, setCount] = useState<number>(0);
+type Props = {
+  count: number;
+  onIncrement: () => void;
+  onDecrement: () => void;
+};
 
-  const increment = () => {
-    if (count < MAX_DISHES) {
-      setCount((prevCount) => prevCount + 1);
-    }
-  };
-
-  const decrement = () => {
-    if (count > MIN_DISHES) {
-      setCount((prevCount) => prevCount - 1);
-    }
-  };
-
+export const Count: FC<Props> = ({ count, onIncrement, onDecrement }) => {
   return (
-    <div>
+    <div className={s.wrapper}>
+      <button type="button" onClick={onIncrement}>
+        +
+      </button>
       <div>{count}</div>
-      <div>
-        <div onClick={increment}>+</div>
-        <div onClick={decrement}>-</div>
-      </div>
+      <button type="button" onClick={onDecrement}>
+        -
+      </button>
     </div>
   );
 };

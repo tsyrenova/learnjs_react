@@ -1,11 +1,11 @@
-import React from 'react';
+import { FC } from 'react';
 import { Menu as MenuType } from '../../type';
 import { Dish } from '../Dish';
 import s from './Menu.module.css';
 
-type MenuProps = { menu: MenuType[] };
+type Props = { menu: MenuType[] };
 
-export const Menu: React.FC<MenuProps> = ({ menu }) => {
+export const Menu: FC<Props> = ({ menu }) => {
   return (
     <div>
       <h3 className={s.title}>Меню</h3>

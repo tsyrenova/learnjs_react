@@ -1,12 +1,12 @@
-import React from 'react';
+import { FC } from 'react';
 import { Review } from '../../type';
 import s from './UserReview.module.css';
 
-type UserReviewProps = {
+type Props = {
   review: Review;
 };
 
-export const UserReview: React.FC<UserReviewProps> = ({ review }) => {
+export const UserReview: FC<Props> = ({ review }) => {
   const { user, rating, text } = review;
 
   return (

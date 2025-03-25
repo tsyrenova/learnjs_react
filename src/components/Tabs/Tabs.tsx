@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import s from './Tabs.module.css';
 import cx from 'classnames';
 
@@ -7,7 +7,7 @@ type Tab = {
   name: string;
 };
 
-type TabsProps = {
+type Props = {
   tabs: Tab[];
   activeTab: string;
   //   TODO добавить правила для ts в конфиг eslint
@@ -15,7 +15,7 @@ type TabsProps = {
   setActiveTab: (tabId: string) => void;
 };
 
-export const Tabs: React.FC<TabsProps> = ({ tabs, activeTab, setActiveTab }) => {
+export const Tabs: FC<Props> = ({ tabs, activeTab, setActiveTab }) => {
   return (
     <>
       <div className={s.tabs}>
