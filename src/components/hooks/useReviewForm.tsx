@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import React, { useReducer } from 'react';
 import { ACTION, DEFAULT_FORM_VALUE } from '../ReviewForm/constants';
 
 export type FormState = {
@@ -31,5 +31,12 @@ const reducer = (state: FormState, action: FormAction): FormState => {
 export const useReviewForm = () => {
   const [form, dispatch] = useReducer(reducer, DEFAULT_FORM_VALUE);
 
-  return { form, dispatch };
+  const setName = (evt: React.ChangeEvent<HTMLInputElement>) =>
+    dispatch({ type: ACTION.SET_NAME, payload: evt.target.value });
+  const setComment = (evt: React.ChangeEvent<HTMLInputElement>) =>
+    dispatch({ type: ACTION.SET_COMMENT, payload: evt.target.value });
+  const setRating = (value: number) => dispatch({ type: ACTION.SET_RATING, payload: value });
+  const reset = () => dispatch({ type: ACTION.RESET });
+
+  return { form, setName, setComment, setRating, reset };
 };
