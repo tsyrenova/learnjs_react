@@ -1,0 +1,8 @@
+.scroll {
+  height: 10px;
+  background-color: rgb(76, 50, 223);
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
