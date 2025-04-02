@@ -1,0 +1,16 @@
+.button {
+  width: 200px;
+  padding: 10px 20px;
+  border: 1px solid #343a40;
+  border-radius: 5px;
+}
+
+.light {
+  background-color: #b4b7ba;
+  color: #000;
+}
+
+.dark {
+  background-color: #343a40;
+  color: #fff;
+}

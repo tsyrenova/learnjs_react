@@ -1,0 +1,15 @@
+.toggleButton {
+    padding: 10px 20px;
+    border: 1px solid red;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .light {
+    background-color: #70869f;
+  }
+  
+  .dark {
+    background-color: #343A40;
+  }

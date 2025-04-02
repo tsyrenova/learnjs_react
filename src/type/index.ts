@@ -25,3 +25,19 @@ export type DishType = {
   price: number;
   ingredients: string[];
 };
+
+export type Theme = 'light' | 'dark';
+
+export type ThemeContextType = {
+  theme: Theme;
+  toggleTheme: () => void;
+};
+
+export type User = {
+  name: string;
+};
+
+export type AuthContextType = {
+  user: User | null;
+  toggleAuthorize: () => void;
+};
