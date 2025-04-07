@@ -3,6 +3,18 @@
   padding: 10px 20px;
   border: 1px solid #343a40;
   border-radius: 5px;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    border-color: transparent;
+  }
 }
 
 .light {
