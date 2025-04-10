@@ -1,26 +1,36 @@
 import { useState } from 'react';
-import { Restaurant } from '../Restaurant';
 import { Tabs } from '../Tabs';
-import { restaurants } from '../../mock';
 import { ProgressBar } from '../ProgressBar';
+import { useSelector } from 'react-redux';
+import { selectRestaurantsIds } from '../redux/entities/restaurants/slice';
+import { TabContainer } from '../TabContainer';
+import { RestaurantContainer } from '../RestaurantContainer';
 
 export const RestaurantsPage = () => {
-  const [activeRestaurantId, setActiveRestaurantId] = useState<string>(restaurants[0].id);
+  const restaurantsIds = useSelector(selectRestaurantsIds);
+  const [activeRestaurantId, setActiveRestaurantId] = useState<string>(restaurantsIds[0]);
+
+  const handleSetActiveRestaurantId = (restaurantId: string) => {
+    if (activeRestaurantId === restaurantId) {
+      return;
+    }
+    setActiveRestaurantId(restaurantId);
+  };
 
   return (
     <>
-      <Tabs
-        tabs={restaurants.map((restaurant) => {
-          return { id: restaurant.id, name: restaurant.name };
-        })}
-        activeTab={activeRestaurantId}
-        setActiveTab={(tabId) => setActiveRestaurantId(tabId)}
-      />
-      <Restaurant restaurant={restaurants.find((restaurant) => restaurant.id === activeRestaurantId)} />
-      <Restaurant restaurant={restaurants.find((restaurant) => restaurant.id === activeRestaurantId)} />
-      <Restaurant restaurant={restaurants.find((restaurant) => restaurant.id === activeRestaurantId)} />
-      <Restaurant restaurant={restaurants.find((restaurant) => restaurant.id === activeRestaurantId)} />
-      <Restaurant restaurant={restaurants.find((restaurant) => restaurant.id === activeRestaurantId)} />
+      <Tabs>
+        {restaurantsIds.map((restaurantId: string) => (
+          <TabContainer
+            key={restaurantId}
+            id={restaurantId}
+            onClick={() => handleSetActiveRestaurantId(restaurantId)}
+            disabled={activeRestaurantId === restaurantId}
+            isActive={restaurantId === activeRestaurantId}
+          />
+        ))}
+      </Tabs>
+      {activeRestaurantId && <RestaurantContainer id={activeRestaurantId} />}
       <ProgressBar />
     </>
   );
