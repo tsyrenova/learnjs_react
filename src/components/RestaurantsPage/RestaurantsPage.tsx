@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Tabs } from '../Tabs';
 import { ProgressBar } from '../ProgressBar';
 import { useSelector } from 'react-redux';
-import { selectRestaurantsIds } from '../redux/entities/restaurants/slice';
+import { selectRestaurantsIds } from '../../redux/entities/restaurants/slice';
 import { TabContainer } from '../TabContainer';
 import { RestaurantContainer } from '../RestaurantContainer';
 

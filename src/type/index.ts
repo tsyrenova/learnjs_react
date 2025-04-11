@@ -40,6 +40,13 @@ export type NormalizedUserType = {
   name: string;
 };
 
+export type CardId = string;
+
+export type Cart = {
+  id: CardId;
+  amount: number;
+};
+
 export type RestaurantState = {
   entities: Record<string, NormalizedRestaurantType>;
   ids: string[];
@@ -65,4 +72,8 @@ export type RootState = {
   dishesSlice: DishState;
   reviewsSlice: ReviewState;
   usersSlice: UserState;
+};
+
+export type CartState = {
+  [key: CardId]: number;
 };

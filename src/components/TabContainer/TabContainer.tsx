@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Button } from '../Button';
 import { useSelector } from 'react-redux';
-import { selectRestaurantById } from '../redux/entities/restaurants/slice';
+import { selectRestaurantById } from '../../redux/entities/restaurants/slice';
 import { RootState } from '../../type';
 
 type Props = {

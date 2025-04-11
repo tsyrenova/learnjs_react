@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { normalizedRestaurants } from '../../../../mock/normalizedMock';
-import { NormalizedRestaurantType, RestaurantState } from '../../../../type';
+import { normalizedRestaurants } from '../../../mock/normalizedMock';
+import { NormalizedRestaurantType, RestaurantState } from '../../../type';
 
 const initialState: RestaurantState = {
   entities: normalizedRestaurants.reduce(

@@ -2,8 +2,8 @@ import { FC } from 'react';
 import { RootState } from '../../type';
 import { useSelector } from 'react-redux';
 import { User } from '../UserReview';
-import { selectUserById } from '../redux/entities/users/slise';
-import { selectReviewById } from '../redux/entities/reviews/slise';
+import { selectUserById } from '../../redux/entities/users/slise';
+import { selectReviewById } from '../../redux/entities/reviews/slise';
 
 type Props = {
   id: string;
