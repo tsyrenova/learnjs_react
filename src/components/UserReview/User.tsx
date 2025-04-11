@@ -1,17 +1,16 @@
 import { FC } from 'react';
-import { Review } from '../../type';
-import s from './UserReview.module.css';
+import s from './User.module.css';
 
 type Props = {
-  review: Review;
+  name: string;
+  rating: number;
+  text: string;
 };
 
-export const UserReview: FC<Props> = ({ review }) => {
-  const { user, rating, text } = review;
-
+export const User: FC<Props> = ({ name, rating, text }) => {
   return (
     <div className={s.container}>
-      <h3>{user}</h3>
+      <h3>{name}</h3>
       <div>
         <p>Оценка: {rating}</p>
         <p>Комментарий: {text}</p>

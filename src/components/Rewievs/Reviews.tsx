@@ -1,19 +1,18 @@
 import { FC } from 'react';
-import { Review as ReviewType } from '../../type';
 import s from './Rewievs.module.css';
-import { UserReview } from '../UserReview';
+import { UserContainer } from '../UserContainer';
 
-type Props = { reviews: ReviewType[] };
+type Props = { reviewsIds: string[] };
 
-export const Reviews: FC<Props> = ({ reviews }) => {
+export const Reviews: FC<Props> = ({ reviewsIds }) => {
   return (
     <div className={s.wrapper}>
       <h3 className={s.title}>Отзывы</h3>
-      {reviews.length ? (
+      {reviewsIds.length ? (
         <ul className={s.reviews}>
-          {reviews.map((review) => (
-            <li key={review.id} className={s.review}>
-              <UserReview review={review} />
+          {reviewsIds.map((reviewId) => (
+            <li key={reviewId} className={s.review}>
+              <UserContainer id={reviewId} />
             </li>
           ))}
         </ul>

@@ -26,3 +26,9 @@
   background-color: #343a40;
   color: #fff;
 }
+
+.active {
+  background-color: #64a6ed;
+  color: white;
+  border-color: #64a6ed;
+}
