@@ -3,7 +3,7 @@ import { Tabs } from '../Tabs';
 import { ProgressBar } from '../ProgressBar';
 import { useSelector } from 'react-redux';
 import { selectRestaurantsIds } from '../../redux/entities/restaurants/slice';
-import { TabContainer } from '../TabContainer';
+import { RestaurantTabContainer } from '../RestaurantTabContainer';
 import { RestaurantContainer } from '../RestaurantContainer';
 
 export const RestaurantsPage = () => {
@@ -21,7 +21,7 @@ export const RestaurantsPage = () => {
     <>
       <Tabs>
         {restaurantsIds.map((restaurantId: string) => (
-          <TabContainer
+          <RestaurantTabContainer
             key={restaurantId}
             id={restaurantId}
             onClick={() => handleSetActiveRestaurantId(restaurantId)}

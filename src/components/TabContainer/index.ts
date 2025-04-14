@@ -1,1 +1,0 @@
-export { TabContainer } from './TabContainer';

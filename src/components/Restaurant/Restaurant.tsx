@@ -8,10 +8,10 @@ import { AuthContext } from '../AuthContext';
 type Props = {
   name: string;
   menu: string[];
-  reviews: string[];
+  reviewsIds: string[];
 };
 
-export const Restaurant: FC<Props> = ({ name, menu, reviews }) => {
+export const Restaurant: FC<Props> = ({ name, menu, reviewsIds }) => {
   const { user } = use(AuthContext);
 
   return (
@@ -19,7 +19,7 @@ export const Restaurant: FC<Props> = ({ name, menu, reviews }) => {
       <div className={s.restaurant}>{name}</div>
       <div className={s.wrapper}>
         <Menu menu={menu} />
-        {reviews && <Reviews reviewsIds={reviews} />}
+        {reviewsIds && <Reviews reviewsIds={reviewsIds} />}
         {user?.name && <ReviewForm />}
       </div>
     </div>

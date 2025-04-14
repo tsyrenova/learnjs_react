@@ -17,5 +17,5 @@ export const RestaurantContainer: FC<Props> = ({ id }) => {
 
   const { name, menu, reviews } = restaurant;
 
-  return <Restaurant name={name} menu={menu} reviews={reviews} />;
+  return <Restaurant name={name} menu={menu} reviewsIds={reviews} />;
 };

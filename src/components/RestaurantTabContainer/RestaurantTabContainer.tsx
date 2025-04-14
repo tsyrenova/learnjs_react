@@ -11,7 +11,7 @@ type Props = {
   isActive: boolean;
 };
 
-export const TabContainer: FC<Props> = ({ id, onClick, disabled, isActive }) => {
+export const RestaurantTabContainer: FC<Props> = ({ id, onClick, disabled, isActive }) => {
   const restaurant = useSelector((state: RootState) => selectRestaurantById(state, id));
   if (!restaurant) {
     return null;

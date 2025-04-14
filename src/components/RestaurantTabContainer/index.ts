@@ -1,0 +1,1 @@
+export { RestaurantTabContainer } from './RestaurantTabContainer';

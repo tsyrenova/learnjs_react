@@ -1,14 +1,10 @@
-import { FC, Fragment } from 'react';
+import { FC } from 'react';
 
 import { CartItemContainer } from '../CartItemContainer';
-
-type Item = {
-  amount: number;
-  id: string;
-};
+import { Cart as CartItem } from '../../type';
 
 type Props = {
-  itemsIds: Item[];
+  itemsIds: CartItem[];
 };
 
 export const Cart: FC<Props> = ({ itemsIds }) => {
@@ -20,11 +16,7 @@ export const Cart: FC<Props> = ({ itemsIds }) => {
     <div style={{ height: 50 }}>
       <h3>Корзина</h3>
       {itemsIds.map(({ id }) => {
-        return (
-          <Fragment key={id}>
-            <CartItemContainer />
-          </Fragment>
-        );
+        return <CartItemContainer key={id} />;
       })}
     </div>
   );

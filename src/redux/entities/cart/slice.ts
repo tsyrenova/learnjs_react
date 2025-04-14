@@ -1,9 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { Cart, CartState } from '../../../type';
 
+const initialCartState: CartState = {};
+
 export const cartSlice = createSlice({
   name: 'cartSlice',
-  initialState: {} as CartState,
+  initialState: initialCartState,
   reducers: {
     addToCart: (state: CartState, { payload }) => {
       state[payload] = (state[payload] || 0) + 1;
