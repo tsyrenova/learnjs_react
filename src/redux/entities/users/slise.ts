@@ -3,13 +3,10 @@ import { normalizedUsers } from '../../../mock/normalizedMock';
 import { NormalizedUserType, UserState } from '../../../type';
 
 const initialState: UserState = {
-  entities: normalizedUsers.reduce(
-    (acc, user) => {
-      acc[user.id] = user;
-      return acc;
-    },
-    {} as Record<string, NormalizedUserType>,
-  ),
+  entities: normalizedUsers.reduce<Record<string, NormalizedUserType>>((acc, user) => {
+    acc[user.id] = user;
+    return acc;
+  }, {}),
   ids: normalizedUsers.map(({ id }) => id),
 };
 

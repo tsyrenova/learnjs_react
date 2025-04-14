@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import s from './Rewievs.module.css';
-import { UserContainer } from '../UserContainer';
+import { Review } from '../Review';
 
 type Props = { reviewsIds: string[] };
 
@@ -10,9 +10,9 @@ export const Reviews: FC<Props> = ({ reviewsIds }) => {
       <h3 className={s.title}>Отзывы</h3>
       {reviewsIds.length ? (
         <ul className={s.reviews}>
-          {reviewsIds.map((reviewId) => (
-            <li key={reviewId} className={s.review}>
-              <UserContainer id={reviewId} />
+          {reviewsIds.map((id) => (
+            <li key={id} className={s.review}>
+              <Review id={id} />
             </li>
           ))}
         </ul>

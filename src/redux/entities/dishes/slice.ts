@@ -3,13 +3,10 @@ import { normalizedDishes } from '../../../mock/normalizedMock';
 import { NormalizedDishType, DishState } from '../../../type';
 
 const initialState: DishState = {
-  entities: normalizedDishes.reduce(
-    (acc, dish) => {
-      acc[dish.id] = dish;
-      return acc;
-    },
-    {} as Record<string, NormalizedDishType>,
-  ),
+  entities: normalizedDishes.reduce<Record<string, NormalizedDishType>>((acc, dish) => {
+    acc[dish.id] = dish;
+    return acc;
+  }, {}),
   ids: normalizedDishes.map(({ id }) => id),
 };
 

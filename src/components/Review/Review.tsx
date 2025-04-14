@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import s from './User.module.css';
+import s from './Review.module.css';
 import { selectReviewById } from '../../redux/entities/reviews/slise';
 import { selectUserById } from '../../redux/entities/users/slise';
 import { RootState } from '../../type';
@@ -9,7 +9,7 @@ type Props = {
   id: string;
 };
 
-export const User: FC<Props> = ({ id }) => {
+export const Review: FC<Props> = ({ id }) => {
   const review = useSelector((state: RootState) => selectReviewById(state, id));
   const user = useSelector((state: RootState) => selectUserById(state, review.userId));
 

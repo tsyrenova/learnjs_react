@@ -3,13 +3,10 @@ import { normalizedReviews } from '../../../mock/normalizedMock';
 import { NormalizedReviewType, ReviewState } from '../../../type';
 
 const initialState: ReviewState = {
-  entities: normalizedReviews.reduce(
-    (acc, dish) => {
-      acc[dish.id] = dish;
-      return acc;
-    },
-    {} as Record<string, NormalizedReviewType>,
-  ),
+  entities: normalizedReviews.reduce<Record<string, NormalizedReviewType>>((acc, dish) => {
+    acc[dish.id] = dish;
+    return acc;
+  }, {}),
   ids: normalizedReviews.map(({ id }) => id),
 };
 

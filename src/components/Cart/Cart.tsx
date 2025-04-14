@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import s from './Cart.module.css';
 
 import { CartItemContainer } from '../CartItemContainer';
 import { Cart as CartItem } from '../../type';
@@ -13,7 +14,7 @@ export const Cart: FC<Props> = ({ itemsIds }) => {
   }
 
   return (
-    <div style={{ height: 50 }}>
+    <div className={s.container}>
       <h3>Корзина</h3>
       {itemsIds.map(({ id }) => {
         return <CartItemContainer key={id} />;
