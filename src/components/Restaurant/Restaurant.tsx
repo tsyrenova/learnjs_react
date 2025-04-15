@@ -1,5 +1,4 @@
 import { FC, use } from 'react';
-import { RestaurantType } from '../../type';
 import s from './Restaurant.module.css';
 import { Menu } from '../Menu';
 import { Reviews } from '../Rewievs';
@@ -7,18 +6,20 @@ import { ReviewForm } from '../ReviewForm';
 import { AuthContext } from '../AuthContext';
 
 type Props = {
-  restaurant: RestaurantType;
+  name: string;
+  menu: string[];
+  reviewsIds: string[];
 };
 
-export const Restaurant: FC<Props> = ({ restaurant }) => {
+export const Restaurant: FC<Props> = ({ name, menu, reviewsIds }) => {
   const { user } = use(AuthContext);
 
   return (
     <div className={s.container}>
-      <div className={s.restaurant}>{restaurant.name}</div>
+      <div className={s.restaurant}>{name}</div>
       <div className={s.wrapper}>
-        <Menu menu={restaurant.menu} />
-        <Reviews reviews={restaurant.reviews} />
+        <Menu menu={menu} />
+        {reviewsIds && <Reviews reviewsIds={reviewsIds} />}
         {user?.name && <ReviewForm />}
       </div>
     </div>

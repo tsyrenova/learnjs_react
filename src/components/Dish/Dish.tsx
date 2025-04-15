@@ -1,16 +1,15 @@
 import { FC, use } from 'react';
-import { Count } from '../Count';
-import { DishType } from '../../type';
-import { useCounter } from '../hooks/useCounter';
 import { AuthContext } from '../AuthContext';
+import { DishCounter } from '../DishCounter';
 
 type Props = {
-  dish: DishType;
+  id: string;
+  name: string;
+  price: number;
+  ingredients: string[];
 };
 
-export const Dish: FC<Props> = ({ dish }) => {
-  const { name, price, ingredients } = dish;
-  const { count, increment, decrement } = useCounter(0);
+export const Dish: FC<Props> = ({ name, price, ingredients, id }) => {
   const { user } = use(AuthContext);
 
   return (
@@ -20,7 +19,7 @@ export const Dish: FC<Props> = ({ dish }) => {
         <p>Ингредиенты: {ingredients.length ? ingredients.join(', ') : '-'}</p>
         <p>Цена: {price !== 0 ? price + ' ₽' : '-'}</p>
       </div>
-      {user?.name && <Count count={count} onDecrement={decrement} onIncrement={increment} />}
+      {user?.name && <DishCounter id={id} />}
     </>
   );
 };

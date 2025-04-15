@@ -1,17 +1,17 @@
 import cx from 'classnames';
 import s from './Button.module.css';
-import { FC, ReactNode, use } from 'react';
+import { FC, use } from 'react';
 import { ThemeContext } from '../ThemeContext';
 
 type Props = {
-  children: ReactNode;
+  title: string;
   disabled?: boolean;
   onClick?: () => void;
   colorViewVariant?: 'default' | 'active';
   className?: string;
 };
 
-export const Button: FC<Props> = ({ children, disabled, onClick, colorViewVariant = 'default', className }) => {
+export const Button: FC<Props> = ({ title, disabled, onClick, colorViewVariant = 'default', className }) => {
   const { theme } = use(ThemeContext);
 
   return (
@@ -25,7 +25,7 @@ export const Button: FC<Props> = ({ children, disabled, onClick, colorViewVarian
         [s.dark]: theme === 'dark',
       })}
     >
-      {children}
+      {title}
     </button>
   );
 };

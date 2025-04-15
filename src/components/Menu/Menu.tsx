@@ -1,9 +1,8 @@
 import { FC } from 'react';
-import { Menu as MenuType } from '../../type';
-import { Dish } from '../Dish';
 import s from './Menu.module.css';
+import { DishContainer } from '../DishContainer';
 
-type Props = { menu: MenuType[] };
+type Props = { menu: string[] };
 
 export const Menu: FC<Props> = ({ menu }) => {
   return (
@@ -11,9 +10,9 @@ export const Menu: FC<Props> = ({ menu }) => {
       <h3 className={s.title}>Меню</h3>
       {menu.length ? (
         <ul className={s.menu}>
-          {menu.map((item) => (
-            <li key={item.id} className={s.dish}>
-              <Dish dish={item} />
+          {menu.map((dishId) => (
+            <li key={dishId} className={s.dish}>
+              <DishContainer id={dishId} />
             </li>
           ))}
         </ul>

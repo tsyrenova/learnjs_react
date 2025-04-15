@@ -13,6 +13,7 @@ export const ReviewForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className={s.form}>
+      <h3>Оставить отзыв</h3>
       <div className={s.wrapper}>
         <span>Имя: </span>
         <input type="text" value={name} onChange={setName} />

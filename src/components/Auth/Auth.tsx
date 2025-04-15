@@ -10,7 +10,7 @@ export const Auth = () => {
   return (
     <div className={s.container}>
       {user ? <p>{user.name}</p> : null}
-      <Button onClick={toggleAuthorize}>{user?.name ? 'Log out' : 'Log in'}</Button>
+      <Button onClick={toggleAuthorize} title={user?.name ? 'Log out' : 'Log in'} />
     </div>
   );
 };
